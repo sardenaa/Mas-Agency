@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Luxurious Black and Majestic Gold theme colors */
+  --color-slate-50: #faf8f4; /* Main pristine ivory gold-white */
+  --color-slate-100: #f4efe5; /* Rich cream */
+  --color-slate-200: #ebdcb9; /* Pale warm gold */
+  --color-slate-300: #d8caa7; /* Soft gold-accented beige */
+  --color-slate-350: #bfae99; /* Rich golden tan */
+  --color-slate-400: #9c9183; /* Warm grey-bronze */
+  --color-slate-500: #736a5f; /* Deep sand */
+  --color-slate-600: #524c44; /* Charcoal gold transition */
+  --color-slate-700: #3b3630; /* Dark premium bronze */
+  --color-slate-850: #1a1816; /* Deep container black-brown */
+  --color-slate-800: #22201d; /* Shimmering dark charcoal */
+  --color-slate-900: #0d0c0b; /* Secondary core black */
+  --color-slate-950: #050504; /* Majestic pitch black background */
+
+  --color-white: #faf8f4; /* Re-route simple "text-white" to our luxury gold-ivory white */
+
+  /* Map emerald to majestic gold colors */
+  --color-emerald-50: #241a05;
+  --color-emerald-100: #42300b;
+  --color-emerald-200: #614810;
+  --color-emerald-300: #a37c1d;
+  --color-emerald-400: #c59b27;
+  --color-emerald-500: #e3bd62; /* Brilliant royal gold */
+  --color-emerald-600: #f0da9e;
+  --color-emerald-700: #f5e4bd;
+  --color-emerald-800: #faf2d9;
+  --color-emerald-900: #eae3d8;
+  --color-emerald-950: #fdfaf3;
+
+  /* Map amber to secondary sand/bronze accents */
+  --color-amber-50: #21180b;
+  --color-amber-100: #402f16;
+  --color-amber-200: #5e4521;
+  --color-amber-300: #7d5e2d;
+  --color-amber-400: #9c7739;
+  --color-amber-500: #b89047;
+  --color-amber-600: #eab460;
+  --color-amber-700: #f2d296;
+  --color-amber-800: #f7e6c3;
+  --color-amber-900: #fbf5e6;
+  --color-amber-950: #21180b;
+
+  /* Map green to golden tones */
+  --color-green-50: #241a05;
+  --color-green-100: #42300b;
+  --color-green-200: #614810;
+  --color-green-300: #a37c1d;
+  --color-green-400: #c59b27;
+  --color-green-500: #e3bd62;
+  --color-green-600: #f0da9e;
+  --color-green-700: #f5e4bd;
+  --color-green-800: #faf2d9;
+
+  --color-brand-green-light: #f0da9e;
+  --color-brand-green: #e3bd62;
+  --color-brand-green-dark: #c59b27;
+  --color-brand-emerald: #e3bd62;
+  --color-brand-gold: #e3bd62;
+  --color-brand-gold-dark: #c59b27;
+}
+
+@layer base {
+  body {
+    background-color: #050504; /* Black background */
+    color: #ebdcb9; /* Shimmering gold-cream */
+    overflow-x: hidden;
+  }
+}
+
+/* Luxurious Gold and Black animations and glows */
+@keyframes goldGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(227, 189, 98, 0.15), inset 0 0 5px rgba(227, 189, 98, 0.05);
+    border-color: rgba(227, 189, 98, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(227, 189, 98, 0.5), inset 0 0 10px rgba(227, 189, 98, 0.25);
+    border-color: rgba(227, 189, 98, 0.7);
+  }
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: 0% 50%;
+    filter: brightness(0.95);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.25);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: brightness(0.95);
+  }
+}
+
+@keyframes premiumGoldPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(227, 189, 98, 0.25), 0 4px 6px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    transform: scale(1.025);
+    box-sizing: border-box;
+    box-shadow: 0 0 25px rgba(227, 189, 98, 0.65), 0 10px 15px rgba(227, 189, 98, 0.15);
+  }
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #ebdcb9 0%, #c59b27 50%, #e3bd62 100%);
+  background-size: 200% 200%;
+  animation: goldShimmer 5s ease infinite;
+}
+
+.animate-gold-glow {
+  animation: goldGlow 3s infinite ease-in-out;
+}
+
+.animate-premium-gold {
+  animation: premiumGoldPulse 2.5s infinite ease-in-out;
+}
+
+.gold-text-shimmer {
+  background: linear-gradient(to right, #ebdcb9 20%, #e3bd62 40%, #c59b27 60%, #ebdcb9 80%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShimmer 4s linear infinite;
+}
+
+/* Custom horizontal scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 🖨️ Printer-Friendly Styling Rules */
+@media print {
+  /* Hide standard screen container elements completely */
+  body, #root, header, footer, section, nav, .no-print, #mas-newsletter-section {
+    display: none !important;
+  }
+  
+  /* Show only designated print layout and position it at the absolute top-left */
+  .print-only {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Reset background for document flow */
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
+
